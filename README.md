@@ -1,7 +1,3 @@
-Here is the suggested `README.md` file and repository details:
-
----
-
 # **WhipDisk: Interactive Disk Management Tool**
 
 ## About

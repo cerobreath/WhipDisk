@@ -64,13 +64,6 @@ create_partition() {
     local disk=$1
     local partition_type
     local size
-    local free_space
-
-    # Get available free space on the disk
-    free_space=$(lsblk -dn -o NAME,FREE | grep "^$(basename "$disk")" | awk '{print $2}')
-    if [[ -z "$free_space" ]]; then
-        free_space="Unknown"
-    fi
 
     partition_type=$(whiptail --title "Partition Type" --menu "Choose the partition type:" 15 60 2 \
         "p" "Primary" \
@@ -80,7 +73,7 @@ create_partition() {
         return
     fi
 
-    size=$(whiptail --inputbox "Enter the partition size (e.g., +500M or +1G). Leave empty to use all remaining space ($free_space):" 10 60 3>&1 1>&2 2>&3)
+    size=$(whiptail --inputbox "Enter the partition size (e.g., +500M or +1G). Leave empty to use all remaining space:" 10 60 3>&1 1>&2 2>&3)
     if [[ $? -ne 0 ]]; then
         return
     fi

@@ -1,6 +1,5 @@
 # **WhipDisk: Interactive Disk Management Tool**
 
-## About
 **WhipDisk** is a simple, interactive disk and partition management utility built using Bash and Whiptail. It provides a graphical interface for tasks such as creating, deleting, and managing partitions without needing complex terminal commands. Designed for Linux users, it simplifies disk management for beginners while remaining powerful for advanced users.
 
 ## Features
